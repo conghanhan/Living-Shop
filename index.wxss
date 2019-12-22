@@ -1,0 +1,86 @@
+page{
+  background-color: #ecf5ff
+}
+.top  {
+  display: flex;
+flex-flow:row;
+}
+.top view{
+width:50%;
+display:inline-block;
+}
+.topbutton {
+  margin-left: 0rpx;
+  padding-left: 0rpx;
+  border-radius: 0;
+}
+.topbutton::after {
+  border-radius: 0;
+  border: none;
+}
+.leftvalue{
+text-align:right;
+padding-right:30rpx;
+}
+#userinfo{
+  margin-left: 282.7rpx;
+  width: 185rpx;
+
+  height:185rpx;
+
+  border-radius:50%;
+
+  display: flex;
+
+  overflow:hidden;
+
+  text-align: center;
+
+}
+#nickname{
+  display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.account-detail{
+height: 100rpx;
+    padding: 0 30rpx;
+}
+ 
+.account-amount{
+    padding: 0 30rpx;
+}
+ 
+.add-one{
+    margin-top: 20rpx;
+}
+ 
+.account-list-text{
+    color:gray;
+    margin:30rpx 0 0 30rpx;
+}
+ 
+.account-list-all-amount{
+    color:gray;
+    align-self: flex-end;
+    padding-right: 25rpx;
+}
+ 
+ 
+.account-list{
+    color:gray;
+    display: flex;
+    flex-direction: row;
+    background-color:wheat;
+    line-height: 70rpx;
+}
+ 
+ 
+.account-list-detail{
+    flex:1;
+}
+ 
+ 
+.account-list-amount{
+    width: 100rpx;
+}
