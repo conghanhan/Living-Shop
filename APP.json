@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/Supervise/Supervise"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f1e1ff",
+    "navigationBarTitleText": "Living Shop",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#d2e9ff"
+  },
+  "tabBar": {
+    "backgroundColor": "#ecf5ff",
+    "selectedColor": "#f669ab",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "成就与欲望",
+        "iconPath": "aid/tabbar/4.jpg",
+        "selectedIconPath": "aid/tabbar/3.jpg"
+      },
+      {
+        "pagePath": "pages/Supervise/Supervise",
+        "text": "监督与被监督",
+        "iconPath": "aid/tabbar/1.jpg",
+        "selectedIconPath": "aid/tabbar/5.jpg"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
