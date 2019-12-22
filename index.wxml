@@ -1,0 +1,95 @@
+<!-- 切换成就和欲望的按钮 -->
+<view class="top">
+<button bindtap="change" size="mini" class="topbutton" wx:if="{{hide2}}"  style="background-color:#ececff;">
+切换至成就记录</button>
+<button bindtap="change" size="mini" class="topbutton" wx:if="{{hide1}}"style="background-color:#ffd2d2;" >
+切换至欲望记录</button>
+<text class="leftvalue">剩余点数:{{accountTotal-accountTotal2}}</text>
+</view>
+<!--用户头像直接显示在小程序中--> 
+<open-data type="userAvatarUrl" class="userinfo" id="userinfo"></open-data>
+<!--用户昵称直接显示在小程序中-->
+<open-data type="userNickName" lang="zh_CN" class="nickname" id="nickname" ></open-data>
+<!-- 主体部分 -->
+<view class="container">
+ 
+    <form catchsubmit="formSubmit" wx:if="{{hide1}}">
+      <view class="account-detail"> 
+        <input placeholder="成就事件" name="inputdetail"  type="text" />
+      </view>
+ 
+      <view class="account-amount"> 
+        <input placeholder="成就值" name="inputamount" type="number" />
+      </view>
+       
+      <view class="add-one">
+        <button formType="submit" style="background-color:#ececff;" loading="{{buttonLoading}}"> 记录成就 </button>
+        <button  bindtap="showlist" wx:if="{{hide4}}" style="background-color:#ecf5ff;"> 查看已完成任务</button>
+        <button  bindtap="showlist" wx:if="{{hide3}}" style="background-color:#ecf5ff;"> 查看未完成任务</button>
+      </view>
+    </form>
+
+        <form catchsubmit="formSubmit2"  wx:if="{{hide2}}">
+      <view class="account-detail"> 
+        <input placeholder="欲望事件" name="inputdetail2"  type="text" />
+      </view>
+ 
+      <view class="account-amount"> 
+        <input placeholder="欲望值" name="inputamount2" type="number" />
+      </view>
+       
+      <view class="add-one">
+        <button formType="submit" style="background-color:#ffd2d2;" loading="{{buttonLoading}}"> 记录欲望 </button>
+        <button  bindtap="showlist" wx:if="{{hide4}}" style="background-color:#ecf5ff;"> 查看已完成任务</button>
+        <button  bindtap="showlist" wx:if="{{hide3}}"style="background-color:#ecf5ff;"> 查看未完成任务</button>
+      </view>
+    </form>
+     <!-- 成就记录的显示 -->
+    <view wx:if="{{hide1}}">
+     <view  class="account-list-all-amount"  >
+      <text>期望成就值:{{accountTotal}}</text>
+     </view>
+        <view  class="account-list-text" >
+          <text wx:if="{{hide4}}">待完成:</text>
+          <text wx:if="{{hide3}}">已完成:</text>
+        </view>
+    <view wx:for="{{accountData}}"  wx:if="{{hide3}}">
+      <view class="account-list">
+        <view class="account-list-detail">
+          {{item.detail}}
+        </view>
+        <view class="account-list-amount">
+          {{item.amount}}
+        </view>
+        <view class="account-list-del">
+            <button size="mini"  type="warn"  data-index-key="{{index}}"  bindtap="deleteRow" >删除</button>
+        </view>
+        </view>
+     </view>
+    </view>
+
+    <!-- 欲望记录的显示 -->
+    <view wx:if="{{hide2}}">
+     <view  class="account-list-all-amount"  >
+      <text>期望欲望值:{{accountTotal2}}</text>
+     </view>
+      <view  class="account-list-text">
+          <text wx:if="{{hide4}}">待完成:</text>
+          <text wx:if="{{hide3}}">已完成:</text>
+      </view>
+    <view wx:for="{{accountData2}}"  wx:if="{{hide3}}">
+      <view class="account-list">
+        <view class="account-list-detail">
+          {{item.detail2}}
+        </view>
+        <view class="account-list-amount">
+          {{item.amount2}}
+        </view>
+        <view class="account-list-del">
+            <button size="mini"  type="warn"  data-index-key="{{index2}}"  bindtap="deleteRow2" >删除</button>
+        </view>
+        </view>
+     </view>
+    </view>
+
+</view>
